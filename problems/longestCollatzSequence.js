@@ -11,10 +11,10 @@ function createCollatz(num, count) {
 }
 
 function longestCollatzSequence(limit) {
-  var c = 0
+  var c = 1
   var maxChain = 0
   var max
-  for (let i=0; i<100000; i++) {
+  for (let i=0; i<limit; i++) {
     var chain = createCollatz(i, c)
     if (chain > maxChain) {
       maxChain = chain
