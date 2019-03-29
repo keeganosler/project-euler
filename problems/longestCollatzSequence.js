@@ -1,31 +1,20 @@
-function createCollatz(num) {
-  var collatz = []
-  collatz.push(num)
-  while (num != 1) {
-    if(num%2 === 0) {
-      num = num /2
-    } else {
-      num = 3*num + 1
-    }
-    collatz.push(num)
+function createCollatz(num, arr) {
+  arr.push(num)
+  if (num%2 === 0) {
+    num = num /2
+  } else {
+    num = 3*num + 1
   }
-  console.log(collatz)
-  return collatz
+  createCollatz(num, arr)
+  return arr
 }
 
 function longestCollatzSequence(limit) {
-  var collatzArr = []
-  var maxChainLength = 0
-  var maxChain = 0
-  for (let i=0; i<limit; i++) {
-    collatzArr = createCollatz(i)
-    var sizeChain = collatzArr.length
-    if(sizeChain > maxChainLength) {
-      maxChainLength = sizeChain
-      maxChain = i
-    }
+  var arr = []
+  for(let i=0; i<limit; i++) {
+    arr = createCollatz(i, arr)
+    console.log(arr)
   }
-  return maxChain
   
 }
 
