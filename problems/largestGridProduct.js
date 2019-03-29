@@ -21,24 +21,25 @@ function largestGridProduct(arr) {
 
       //up-to-down
       if (i<arr.length-3) {
-
+        product = arr[i][j] * arr[i + 1][j] * arr[i + 2][j] * arr[i + 3][j]
         maxProduct = findLarger(product, maxProduct)
       }
 
       //upleft-to-downright
       if ((j<row.length-3) && (i<arr.length-3)) {
-
+        product = arr[i][j] * arr[i + 1][j + 1] * arr[i + 2][j + 2] * arr[i + 3][j + 3]
         maxProduct = findLarger(product, maxProduct)
       }
 
       //upright-to-downleft
       if((j>2) && (i<arr.length-3)) {
-
+        product = arr[i][j] * arr[i + 1][j - 1] * arr[i + 2][j - 2] * arr[i + 3][j - 3]
         maxProduct = findLarger(product, maxProduct)
       }
 
     }
   }
+  return maxProduct
   
 }
 
