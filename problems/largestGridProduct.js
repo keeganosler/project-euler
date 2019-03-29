@@ -10,28 +10,19 @@ function largestGridProduct(arr) {
   var maxProduct = 0
   var product
   for(let i=0; i<arr.length; i++) {
-    var row = arr[i]
-    for (let j=0; j<row.length; j++) {
-
-      //left-to-right
-      if (j<row.length-3) {
-        product = row[j] * row[j+1] * row[j+2] * row[j+3]
+    for (let j=0; j<arr[i].length; j++) {
+      if (j<arr[i].length-3) {
+        product = arr[i][j] * arr[i][j+1] * arr[i][j+2] * arr[i][j+3]
         maxProduct = findLarger(product, maxProduct)
       }
-
-      //up-to-down
       if (i<arr.length-3) {
         product = arr[i][j] * arr[i + 1][j] * arr[i + 2][j] * arr[i + 3][j]
         maxProduct = findLarger(product, maxProduct)
       }
-
-      //upleft-to-downright
-      if ((j<row.length-3) && (i<arr.length-3)) {
+      if ((j<arr[i].length-3) && (i<arr.length-3)) {
         product = arr[i][j] * arr[i + 1][j + 1] * arr[i + 2][j + 2] * arr[i + 3][j + 3]
         maxProduct = findLarger(product, maxProduct)
       }
-
-      //upright-to-downleft
       if((j>2) && (i<arr.length-3)) {
         product = arr[i][j] * arr[i + 1][j - 1] * arr[i + 2][j - 2] * arr[i + 3][j - 3]
         maxProduct = findLarger(product, maxProduct)
@@ -39,11 +30,9 @@ function largestGridProduct(arr) {
 
     }
   }
-  return maxProduct
-  
+  return maxProduct 
 }
 
-// Only change code above this line
 const grid = [
   [8, 2, 22, 97, 38, 15, 0, 40, 0, 75, 4, 5, 7, 78, 52, 12, 50, 77, 91, 8],
   [49, 49, 99, 40, 17, 81, 18, 57, 60, 87, 17, 40, 98, 43, 69, 48, 4, 56, 62, 0],
