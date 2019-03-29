@@ -1,3 +1,11 @@
+function findLarger (n1, n2) {
+  if(n1 > n2) {
+    return n1
+  } else {
+    return n2
+  }
+}
+
 function largestGridProduct(arr) {
   var maxProduct = 0
   var product
@@ -7,22 +15,26 @@ function largestGridProduct(arr) {
 
       //left-to-right
       if (j<row.length-3) {
-
+        product = row[j] * row[j+1] * row[j+2] * row[j+3]
+        maxProduct = findLarger(product, maxProduct)
       }
 
       //up-to-down
       if (i<arr.length-3) {
 
+        maxProduct = findLarger(product, maxProduct)
       }
 
       //upleft-to-downright
       if ((j<row.length-3) && (i<arr.length-3)) {
 
+        maxProduct = findLarger(product, maxProduct)
       }
 
       //upright-to-downleft
       if((j>2) && (i<arr.length-3)) {
 
+        maxProduct = findLarger(product, maxProduct)
       }
 
     }
