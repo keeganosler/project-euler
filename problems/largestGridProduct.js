@@ -1,34 +1,32 @@
-function findLeftLimit(n) {
-  var leftLimit
-  if (n === 0) {
-    leftLimit = n
-  } else if (n>=1 && n<=3) {
-    leftLimit = 0
-  } else {
-    leftLimit = n-3
-  }
-  return leftLimit
-}
-
-function findRightLimit(n,m) {
-  
-}
-
 function largestGridProduct(arr) {
-  let nums = []
-  let maxProduct = 0
-  for (let i=0; i<arr.length; i++) {
-    for (let j=0; j<arr[i].length; i++) {
-      nums.push(arr[i][j])
-      //horizontally
-      var ll = findLeftLimit(j)
-      var rl = findRightLimit(j, arr[i].length)
-      //vertically
+  var maxProduct = 0
+  var product
+  for(let i=0; i<arr.length; i++) {
+    var row = arr[i]
+    for (let j=0; j<row.length; j++) {
 
-      //diagonally
+      //left-to-right
+      if (j<row.length-3) {
+
+      }
+
+      //up-to-down
+      if (i<arr.length-3) {
+
+      }
+
+      //upleft-to-downright
+      if ((j<row.length-3) && (i<arr.length-3)) {
+
+      }
+
+      //upright-to-downleft
+      if((j>2) && (i<arr.length-3)) {
+
+      }
+
     }
   }
-
   
 }
 
