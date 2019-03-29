@@ -14,5 +14,4 @@ function largestProductinaSeries(n) {
   }
   return maxProduct;
 }
-
 largestProductinaSeries(13);
