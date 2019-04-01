@@ -1,12 +1,11 @@
 function powerDigitSum(exponent) {
   var num = Math.pow(2, exponent)
-  console.log(num)
-  var digits = num.toString()
   var sum = 0
-  for (var i=0; i<digits.length; i++) {
-    sum = sum + digits[i]
+  while (num) {
+    sum += num%10
+    num = Math.floor(num/10)
   }
-  console.log(sum)
+  return sum
 }
 
-powerDigitSum(15);
+powerDigitSum(128);
