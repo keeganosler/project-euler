@@ -1,7 +1,12 @@
 function maximumPathSumI(triangle) {
   var maxSum = 0
+  var triRow = []
   for (let i=0; i<triangle.length; i++) {
-    maxSum = maxSum + Math.max(...triangle[i])
+    if (i===0) {
+      maxSum = maxSum + triangle[0][0]
+    } else {
+      maxSum = maxSum + Math.max(triangle[i][i], triangle[i][i+1])
+    }
     console.log(maxSum)
   }
 }
