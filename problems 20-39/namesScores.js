@@ -1,6 +1,12 @@
 function namesScores(arr) {
-  // Good luck!
-  return arr;
+  var sortedArr = arr.sort()
+  for (let i=0; i<sortedArr.length; i++) {
+    var alphSum=0
+    for (let j=0; j<sortedArr[i].length; j++) {
+      alphSum = alphSum + sortedArr[i].charCodeAt(j)-64
+      console.log(alphSum)
+    }
+  }
 }
 
 // Only change code above this line
